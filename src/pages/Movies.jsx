@@ -72,6 +72,7 @@ const Movies = () => {
                     <option value="OLDEST_TO_NEWEST">Oldest to Newest</option>
                     <option value="NEWEST_TO_OLDEST">Newest to Oldest</option>
                 </select>
+                
             </div>
 
             <div id="results">

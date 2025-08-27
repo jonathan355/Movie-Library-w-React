@@ -1,36 +1,49 @@
-import React from 'react'
-import 'font-awesome/css/font-awesome.min.css'
+import React, {useState} from 'react'
+import 'font-awesome/css/font-awesome.min.css';
+import '../Home.css';
 
 const Home = () => {
+
+    const [searchTerm, setSearchTerm] = useState('');
+    const [results, setResults] = useState('');
+
+    const searchMovies = () => {
+        setResults('You searched for: ${searchTerm}');
+    };
+
   return (
-    <div>
-         <header className="nav">
+<> 
+      <header className="nav">
         <div className="nav__container">
-                <nav>
+            <nav>
                 <i className="fa-solid fa-film icon-large"></i>
-                </nav>
-                <h1 className="landing__title">Movie Library</h1>   
+            </nav>
+            <h1 className="landing__title">Movie Library</h1>   
         </div>
-    </header>
-    </div>
-    <div className="movie__search--container">
-                    <div className="movie__search">
-                        <label className="movie__search--label">
-                            Search by Movie Title:
-                        </label>
-                        <input className="search" type="text" id="searchInput" placeholder="Title" />
-                        <button className="search__button" onclick="searchMovies()">Search</button>
-                    </div>
+      </header>
+    
+      <div className="movie__search--container">
+        <div className="movie__search">
+            <label className="movie__search--label">
+                Search by Movie Title:
+            </label>
+            <input 
+             className="search" 
+             type="text" 
+             id="searchInput" 
+             placeholder="Title"
+             value={searchTerm}
+             onChange={(event) => setSearchTerm(event.target.value)} 
+             />
+            <button className="search__button" onClick={searchMovies}> 
+                Search 
+            </button>
             </div>
-  )
-}
+            {results && <div id="results">{results}</div>}
+        </div>
+            </>
+        );
 
-<script>
-        function searchMovies() {
-            const query = document.getElementById('searchInput').value;
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = `You searched for: ${query}`;
-        }
-    </script>
+    };
 
-export default Home
+export default Home;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Movies = () => {
     const { id } = useParams();
@@ -72,7 +73,7 @@ const Movies = () => {
                     <option value="OLDEST_TO_NEWEST">Oldest to Newest</option>
                     <option value="NEWEST_TO_OLDEST">Newest to Oldest</option>
                 </select>
-                
+
             </div>
 
             <div id="results">
@@ -84,12 +85,14 @@ const Movies = () => {
                 
                 {!loading && movies.map(movie => (
                     <div key={movie.imdbID} className="movie">
+                        <Link to='/MovieInfo'>
                         <img 
                             src={movie.Poster} 
                             alt={`${movie.Title} poster`} 
                             className="small-image"
                         />
                         <h3>{movie.Title}</h3>
+                         </Link>
                         <p>{movie.Year}</p>
                     </div>
                 ))}

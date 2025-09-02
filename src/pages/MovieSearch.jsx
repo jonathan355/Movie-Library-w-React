@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const Movies = () => {
+const MovieSearch = () => {
     const { id } = useParams();
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
@@ -101,4 +101,4 @@ const Movies = () => {
     );
 };
 
-export default Movies;
+export default MovieSearch;

@@ -10,6 +10,30 @@ html {
   scroll-behavior: smooth;
 }
 
+.hero__container {
+    position:relative;
+}
+
+.hero__title__description {
+    max-width: 800px;
+}
+
+.email__form {
+    position: absolute;
+    top: 40%;
+    left: 24%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.email__input {
+margin-top: 16px;
+}
+
+.email__btn {
+margin-left: 20px;
+}
+
 .row {
     width: 100%;
     max-width: 1280px;
@@ -84,8 +108,6 @@ font-weight: 700;
   background-position: center;
   background-size: 100%;
   color: whitesmoke;
-  
-  
 }
 
 nav {
@@ -106,6 +128,15 @@ nav {
 
 .nav__link:hover {
   text-decoration: underline;
+}
+
+.nav__links {
+display: flex;
+align-content: center;
+}
+
+.nav__link {
+    margin-left: 20px;
 }
 
 #filter {
@@ -140,6 +171,11 @@ margin-right: 4px;
 .search {
   border-radius: 500px;
   padding: 4px;
+}
+
+li {
+margin-left: 14px;
+
 }
 
 .search__button {

@@ -12,12 +12,7 @@ function Nav() {
             <h1 className="landing__title">Movie Library</h1>   
         </div>
       </header>
-            <ul>   
-             <li>
-              <Link to="/">Home</Link>               
-              <Link to="/Movies">Movies</Link>               
-             </li>
-            </ul>
+           
         </nav>
     );
 }

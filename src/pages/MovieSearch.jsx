@@ -1,22 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './MovieSearch.css';
 
 const MovieSearch = () => {
-    const { id } = useParams();
     const [movies, setMovies] = useState([]);
     const [searchTerm, setSearchTerm] = useState('');
     const [filter, setFilter] = useState('');
     const [loading, setLoading] = useState(false);
 
-    const searchMovies = async (searchFilter = filter) => {
-        if (!searchTerm) return;
+    const query = new URLSearchParams(useLocation().search);
+    const searchTermFromQuery = query.get('query');
+
+    useEffect(() => {
+        if (searchTermFromQuery){
+            setSearchTerm(searchTermFromQuery);
+            searchMovies('',searchTermFromQuery);
+        }
+    },[searchTermFromQuery]);
+
+    const searchMovies = async (searchFilter = filter, termToSearch = searchTerm) => {
+        if (!termToSearch) return;
         
         setLoading(true);
         
         try {
-            const { data } = await axios.get(`http://www.omdbapi.com/?s=${searchTerm}&apikey=c6a26922`);
+            const { data } = await axios.get(`http://www.omdbapi.com/?s=${termToSearch}&apikey=c6a26922`);
             
             if (data.Response === "True") {
                 let movieResults = data.Search.slice(0, 6);
@@ -45,7 +57,7 @@ const MovieSearch = () => {
 
     const handleSearch = (event) => {
         if (event.key === 'Enter') {
-            searchMovies();
+            searchMovies(searchTerm);
         }
     };
 
@@ -57,7 +69,15 @@ const MovieSearch = () => {
 
     return (
         <div>
+            
+<div className="return">
+                <Link to="/" className="movie__link"> 
+                    <FontAwesomeIcon icon="arrow-left" />
+                    <h2 className='movie__selected--title'>Home</h2>
+                </Link>
+            </div>
             <div>
+                
                 <input
                     type="text"
                     value={searchTerm}
@@ -76,7 +96,10 @@ const MovieSearch = () => {
 
             </div>
 
+            
             <div id="results">
+               
+                
                 {loading && <i className="fas fa-spinner results__loading--spinner"></i>}
                 
                 {!loading && movies.length === 0 && searchTerm && (

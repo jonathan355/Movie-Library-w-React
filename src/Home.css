@@ -18,6 +18,13 @@ html {
     max-width: 800px;
 }
 
+.main__logo {
+    position: absolute;
+    display: flex;
+    scale: 30%;
+    margin-top: 70px;
+}
+
 .email__form {
     position: absolute;
     top: 40%;
@@ -28,10 +35,23 @@ html {
 
 .email__input {
 margin-top: 16px;
+border-radius: 10px;
+border: 2px solid #e5e7ebd9;
+padding: 16px 40px 16px 24px;
+color: #243e63d9;
+font-size: 16px;
 }
 
 .email__btn {
 margin-left: 20px;
+border-radius: 10px;
+width: 160px;
+border: none;
+background-color: #00CED1;
+color: #fff;
+font-weight: 700;
+font-size: 16px;
+padding: 16px 16px 16px 20px;
 }
 
 .row {
@@ -51,6 +71,12 @@ h1 {
   margin-top: 20px;
 }
 
+h2 {
+    color: #00CED1;
+    font-weight: 800;
+    place-items: center;
+}
+
 h3 {
 font-size: 32px;
 font-weight: 700;
@@ -64,10 +90,6 @@ line-height: 1.5;
 
 img {
   width: 100%;
-}
-
-a {
-  text-decoration: none;
 }
 
 button {
@@ -101,12 +123,16 @@ font-weight: 700;
 
 }
 
-.nav {
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 1000;  
   width: 100vw;
   height: 100px;
   background-image: url(./assets/—Pngtree—movie\ film\ black\ minimalist\ background_1474600.jpg);
   background-position: center;
   background-size: 100%;
+  overflow: hidden;
   color: whitesmoke;
 }
 
@@ -147,16 +173,6 @@ align-content: center;
 
 /* HEADER */
 
-.movie__search--container {
-  width: 100%;
-  max-width: 1200px;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
 .movies__header {
   display: flex;
  
@@ -165,7 +181,8 @@ align-content: center;
 }
 
 .movie__search--label {
-margin-right: 4px;
+  margin-right: 4px;
+  color:#00CED1;
 }
 
 .search {
@@ -182,6 +199,29 @@ margin-left: 14px;
   margin-left: 4px;
   padding: 4px 16px;
   border-radius: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    opacity: 80%;
+    z-index: 0;
+
+}
+
+.section__title {
+display: flex;
+justify-content: center;
+
+}
+
+.movie__search--container {
+width: 100%;
+max-width: 1200px;
+display: flex;
+justify-content: center;
+margin: 20px 0;
 }
 
 /* RESULTS */

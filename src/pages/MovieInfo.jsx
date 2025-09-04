@@ -19,7 +19,7 @@ function MovieInfo() {
               <FontAwesomeIcon icon="arrow-left" />
               </Link>
               <Link to='/Movies'>
-              <h2 className='movie__selected--title'>Movies</h2>
+              <h2 className='movie__info--title'>Your Selection:</h2>
               </Link> 
               <div className="movie__selected">
                 <figure className='movie__selected--figure'>
@@ -36,6 +36,12 @@ function MovieInfo() {
                         />
                         <h3>{movie.Title}</h3>
                         <p>{movie.Year}</p>
+                        <p>Director:{ movie.Director }</p>
+                        <p>Writer/s:{ movie.Writers }</p>
+                        <p>Actors:{ movie.Actors }</p>
+                        <p>Language: { movie.Language }</p>
+                        <p>Plot:{ movie.Plot }</p>
+                        <p>what critics are saying:{ movie.Ratings }</p>
                     </div>
                 ))}
           </div>

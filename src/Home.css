@@ -21,8 +21,8 @@ html {
 .main__logo {
     position: absolute;
     display: flex;
-    scale: 30%;
-    margin-top: 70px;
+    scale: 25%;
+    margin-top: 90px;
 }
 
 .email__form {
@@ -37,7 +37,7 @@ html {
 margin-top: 16px;
 border-radius: 10px;
 border: 2px solid #e5e7ebd9;
-padding: 16px 40px 16px 24px;
+padding: 4px 4px 4px 24px;
 color: #243e63d9;
 font-size: 16px;
 }
@@ -51,7 +51,8 @@ background-color: #00CED1;
 color: #fff;
 font-weight: 700;
 font-size: 16px;
-padding: 16px 16px 16px 20px;
+padding: 4px 16px 8px 10px;
+
 }
 
 .row {
@@ -145,11 +146,10 @@ nav {
 .nav__container {
   width: 100%;
   max-width: 1200px;
-  padding: 0 24px;
   display: flex;
   align-items: center;
-  margin: 0 auto;
-  position: absolute;
+  
+  
 }
 
 .nav__link:hover {
@@ -157,12 +157,20 @@ nav {
 }
 
 .nav__links {
-display: flex;
-align-content: center;
+  position: absolute;
+  display: flex;
+  align-content: center;
+  bottom: 0;
+  right: 52px;
 }
 
 .nav__link {
-    margin-left: 20px;
+    margin-left: 16px;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 8px;
 }
 
 #filter {
@@ -183,6 +191,8 @@ align-content: center;
 .movie__search--label {
   margin-right: 4px;
   color:#00CED1;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .search {
@@ -197,7 +207,7 @@ margin-left: 14px;
 
 .search__button {
   margin-left: 4px;
-  padding: 4px 16px;
+  padding: 24px 36px;
   border-radius: 20px;
 }
 

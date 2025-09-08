@@ -11,6 +11,7 @@ const MovieSearch = () => {
     const [searchTerm, setSearchTerm] = useState('');
     const [filter, setFilter] = useState('');
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null)
 
     const query = new URLSearchParams(useLocation().search);
     const searchTermFromQuery = query.get('query');
@@ -26,6 +27,7 @@ const MovieSearch = () => {
         if (!termToSearch) return;
         
         setLoading(true);
+        setError(null);
         
         try {
             const { data } = await axios.get(`http://www.omdbapi.com/?s=${termToSearch}&apikey=c6a26922`);
@@ -49,6 +51,7 @@ const MovieSearch = () => {
             }
         } catch (error) {
             console.error('Error fetching data:', error);
+            setError('Failed to fetch movies. Please try again later.')
             setMovies([]);
         } finally {
             setLoading(false);
@@ -99,24 +102,24 @@ const MovieSearch = () => {
             
             <div id="results">
                
-                
                 {loading && <i className="fas fa-spinner results__loading--spinner"></i>}
-                
+                {error && <p>{error}</p>}
                 {!loading && movies.length === 0 && searchTerm && (
                     <p>No results found for "{searchTerm}".</p>
                 )}
                 
                 {!loading && movies.map(movie => (
                     <div key={movie.imdbID} className="movie">
-                        <Link to='/MovieInfo'>
+                        <Link to={`/movie/${movie.imdbID}`}> {}
                         <img 
                             src={movie.Poster} 
                             alt={`${movie.Title} poster`} 
                             className="small-image"
                         />
                         <h3>{movie.Title}</h3>
-                         </Link>
                         <p>{movie.Year}</p>
+                         </Link>
+                        
                     </div>
                 ))}
             </div>

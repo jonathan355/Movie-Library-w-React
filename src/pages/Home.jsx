@@ -31,14 +31,17 @@ const Home = () => {
   return (
   <>
       <header className="navbar">
-        <div className="nav__container">
-            <img className= "main__logo" src={ logo } alt="" />
-             <ul>   
+        <ul>   
              <li className='nav__links'>
               <Link className='nav__link' to="/">Home</Link>               
               <Link className='nav__link' to="/MovieSearch">Movie Search</Link>               
+              <Link className='nav__link' to="/MovieSearch">Contact</Link>               
+              <Link className='nav__link' to="/MovieSearch">Legal</Link>               
              </li>
-            </ul>   
+        </ul>   
+        
+        <div className="nav__container">
+            <img className= "main__logo" src={ logo } alt="" />
         </div>
       </header>
      <div className="hero__container">

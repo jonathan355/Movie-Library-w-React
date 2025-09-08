@@ -11,9 +11,10 @@ function App() {
     <Router>
         <div className="app__container">  
       <Routes>
-        <Route path="/" element={<Home />}>Home</Route>
-        <Route path="/MovieSearch" element={<MovieSearch />}>Movies</Route>
-        <Route path="/MovieInfo" element={<MovieInfo />}>MovieInfo </Route>
+        <Route path="/" element={<Home />} />
+        <Route path="/MovieSearch" element={<MovieSearch />} />
+        <Route path="/movie/:id" element={<MovieInfo />} />
+
       </Routes>
         </div>
     </Router>

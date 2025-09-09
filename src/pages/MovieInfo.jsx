@@ -30,7 +30,7 @@ function MovieInfo() {
   return (
     <div id="movie__body">
       <main id="movie__main">
-              <Link to="/" className="movie__link--info"> 
+              <Link to="/MovieSearch" className="movie__link--info"> 
               <FontAwesomeIcon icon="arrow-left" />
               <h4 className='back__btn__selected'>Back to Movies</h4>
               </Link>

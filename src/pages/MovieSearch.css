@@ -3,4 +3,40 @@
     align-items: center;
     padding-top: 24px;
     padding-left: 24px;
+    margin-left: 16px;
+    margin-bottom: 16px;
+    color: #00CED1;
+    text-decoration: none;
+}
+
+.movie__selected--title {
+   margin-left: 16px;
+   font-size: 32px;
+}
+
+.movie__selected--title:hover {
+  text-decoration: underline;
+}
+
+.movie__search--bar {
+    display: flex;
+    justify-content: center;
+}
+
+.movie__search--field {
+    margin-right: 16px;
+    border-radius: 500px;
+    padding: 12px 12px 12px 12px;
+    font-size: 20px
+}
+
+.movie__search--filter {
+    background-color: #00CED1;
+    border-radius: 500px;
+    font-size: 20px;
+}
+
+.theme {
+color: #00CED1;
+text-decoration: none;
 }

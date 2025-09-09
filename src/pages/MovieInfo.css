@@ -12,6 +12,8 @@
     padding-top: 24px;
     padding-left: 52px;
     padding-bottom: 48px;
+    color: #00CED1;
+    text-decoration: none;
 }
 
 .movie__selected {
@@ -22,6 +24,7 @@
 .back__btn__selected {
     font-style: italic;
     font-size: large;
+    color: #00CED1;
 }
 
 .movie__info--title {
@@ -46,9 +49,9 @@
 }
 
 .movie__selected--img {
-    max-height: 500px;
+    max-height: 100%;
     max-width: 100%;
-    scale: 1;
+    
 }
 
 .movie__text--title {

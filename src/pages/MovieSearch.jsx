@@ -79,9 +79,9 @@ const MovieSearch = () => {
                     <h2 className='movie__selected--title'>Home</h2>
                 </Link>
             </div>
-            <div>
-                
+            <div className='movie__search--bar'>
                 <input
+                    className='movie__search--field'
                     type="text"
                     value={searchTerm}
                     onChange={(event) => setSearchTerm(event.target.value)}
@@ -89,7 +89,7 @@ const MovieSearch = () => {
                     placeholder="Search movies..."
                 />
                 
-                <select value={filter} onChange={handleFilterChange}>
+                <select value={filter} onChange={handleFilterChange} className='movie__search--filter'>
                     <option value="">No Filter</option>
                     <option value="TITLE_A_TO_Z">Title A-Z</option>
                     <option value="TITLE_Z_TO_A">Title Z-A</option>
@@ -116,8 +116,8 @@ const MovieSearch = () => {
                             alt={`${movie.Title} poster`} 
                             className="small-image"
                         />
-                        <h3>{movie.Title}</h3>
-                        <p>{movie.Year}</p>
+                        <h3 className='theme'>{movie.Title}</h3>
+                        <p className='theme'>{movie.Year}</p>
                          </Link>
                         
                     </div>

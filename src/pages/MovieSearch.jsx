@@ -88,6 +88,9 @@ const MovieSearch = () => {
                     onKeyDown={handleSearch}
                     placeholder="Search movies..."
                 />
+                <button className="search__button" onClick={searchMovies}> 
+                Search 
+            </button>
                 
                 <select value={filter} onChange={handleFilterChange} className='movie__search--filter'>
                     <option value="">No Filter</option>
@@ -105,7 +108,7 @@ const MovieSearch = () => {
                 {loading && <i className="fas fa-spinner results__loading--spinner"></i>}
                 {error && <p>{error}</p>}
                 {!loading && movies.length === 0 && searchTerm && (
-                    <p>No results found for "{searchTerm}".</p>
+                    <p>No results found for "{searchTerm}"</p>
                 )}
                 
                 {!loading && movies.map(movie => (

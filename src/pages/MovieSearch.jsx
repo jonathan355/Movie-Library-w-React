@@ -30,7 +30,7 @@ const MovieSearch = () => {
         setError(null);
         
         try {
-            const { data } = await axios.get(`http://www.omdbapi.com/?s=${termToSearch}&apikey=c6a26922`);
+            const { data } = await axios.get(`https://www.omdbapi.com/?s=${termToSearch}&apikey=c6a26922`);
             
             if (data.Response === "True") {
                 let movieResults = data.Search.slice(0, 6);
